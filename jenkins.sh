@@ -15,7 +15,7 @@ then
 fi
 sudo yum install -y google-chrome-stable_current_x86_64.rpm
 sudo yum install -y firefox
-sudo yum install bzip2
+sudo yum install -y bzip2
 npm install phantomjs --save-dev
 ./node_modules/protractor/bin/webdriver-manager update --standalone
 grunt pro --no-color
