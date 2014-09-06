@@ -15,5 +15,6 @@ exports.config = {
 	showColors: true,
 	defaultTimeoutInterval: 60000
     },
-    baseUrl: 'http://127.0.0.1:9000/'
+    baseUrl: 'http://127.0.0.1:9000/',
+    rootElement: 'html'
 };
