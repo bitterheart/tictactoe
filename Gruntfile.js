@@ -32,8 +32,15 @@ module.exports = function(grunt) {
 	express: {
 	    server:{
 		options:{
+		    hostname: '127.0.0.1',
 		    port: 9000,
-		    bases: 'src'
+		    bases: 'src/html'
+		},
+	    server:{
+		options:{
+		    hostname: '127.0.0.1',
+		    port: 9000,
+		    bases: 'src/js'
 		}
 	    }
 	}
