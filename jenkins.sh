@@ -1,6 +1,7 @@
 #!/bin/bash
 
 npm install express --save-dev
+npm install grunt-express --save-dev
 more package.json
 if [ ! -f google-chrome-stable_current_x86_64.rpm ]
 then
