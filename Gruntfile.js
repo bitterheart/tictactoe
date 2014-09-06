@@ -6,6 +6,30 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
 	pkg: grunt.file.readJSON('package.json'),
+	protractor_webdriver: {
+            your_target: {
+		options: {
+                    path: 'node_modules/protractor/bin/',
+                    command: 'webdriver-manager start'
+		}
+            }
+	}, 
+	protractor: {
+            options: {
+		configFile: "node_modules/protractor/referenceConf.js", // Default config file
+		keepAlive: true, // If false, the grunt process stops when the test fails.
+		noColor: false, // If true, protractor will not use colors in its output.
+		args: {
+		    // Arguments passed to the command
+		}
+            },
+            your_target: {
+		options: {
+                    configFile: "test/conf.js", // Target-specific config file
+                    args: {} // Target-specific arguments
+		}
+            }
+	},
 	clean: ['dist/*.js', 'test/testem.tap'],
 	jshint: {
 	    all: ['src/*.js'],
@@ -57,6 +81,7 @@ module.exports = function(grunt) {
 	    }
 	}
     });
+    grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -65,6 +90,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-qunit-cov');
     grunt.loadNpmTasks('grunt-plato');
     // Default task(s).
+    grunt.registerTask('pro', [
+	'protractor_webdriver',
+	'protractor'
+    ]);
     grunt.registerTask('default', ['jshint', 'testem', 'clean', 'qunit-cov']);
     grunt.registerTask('jenkins', ['jshint', 'testem', 'clean', 'qunit-cov', 'plato', 'concat', 'uglify']);
 };
+//stuff
