@@ -1,5 +1,5 @@
 exports.config = {
-    seleniumAddress: 'http://0.0.0.0:4444/wd/hub'
+    seleniumAddress: 'http://0.0.0.0:4444/wd/hub',
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
