@@ -31,6 +31,7 @@ module.exports = function(grunt) {
 	},
 	express: {
 	    options:{
+		port: 9000,
 		bases: 'src'
 	    }
 	}
@@ -39,8 +40,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-protractor-webdriver');
     grunt.loadNpmTasks('grunt-express');
     grunt.registerTask('pro', [
-	'protractor_webdriver',
 	'express',
+	'protractor_webdriver',
 	'protractor'
     ]);
 };
