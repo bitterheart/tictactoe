@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
     grunt.initConfig({
+	pkg: grunt.file.readJSON('package.json'),
 	protractor_webdriver: {
             your_target: {
 		options: {
@@ -25,8 +26,8 @@ module.exports = function (grunt) {
             }
 	}
     });
-    
     grunt.registerTask('p:test', [
+	'pkg',
 	'protractor_webdriver',
 	'protractor'
     ]);  
