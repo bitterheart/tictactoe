@@ -18,7 +18,10 @@ sudo yum install -y firefox
 sudo yum install -y bzip2
 npm install phantomjs --save-dev
 sudo yum install -y Xvfb
-Xvfb :99 -ac -screen 0 1024x768x24 &
-export DISPLAY=:99
+if [ ! -d /tmp/.X99-lock ]
+then
+    Xvfb :99 -ac -screen 0 1024x768x24 &
+    export DISPLAY=:99
+fi
 ./node_modules/protractor/bin/webdriver-manager update --standalone
 grunt pro --no-color
