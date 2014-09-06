@@ -36,6 +36,7 @@ module.exports = function(grunt) {
 		    port: 9000,
 		    bases: 'src/html'
 		},
+	    },
 	    javascript:{
 		options:{
 		    hostname: '127.0.0.1',
@@ -43,7 +44,7 @@ module.exports = function(grunt) {
 		    bases: 'src/js'
 		}
 	    }
-	    }
+	}
     });
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-protractor-webdriver');
