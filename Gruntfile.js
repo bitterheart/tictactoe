@@ -40,6 +40,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-express');
     grunt.registerTask('pro', [
 	'protractor_webdriver',
+	'express',
 	'protractor'
     ]);
 };
