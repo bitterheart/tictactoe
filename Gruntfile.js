@@ -30,20 +30,13 @@ module.exports = function(grunt) {
             }
 	},
 	express: {
-	    html:{
+	    server:{
 		options:{
 		    hostname: '127.0.0.1',
 		    port: 9000,
-		    bases: 'src/html'
+		    bases: ['src/html','src/java']
 		},
 	    },
-	    javascript:{
-		options:{
-		    hostname: '127.0.0.1',
-		    port: 9000,
-		    bases: 'src/js'
-		}
-	    }
 	}
     });
     grunt.loadNpmTasks('grunt-protractor-runner');
