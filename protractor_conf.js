@@ -13,7 +13,7 @@ exports.config = {
     // Options to be passed to Jasmine-node.
     jasmineNodeOpts: {
 	showColors: true,
-	defaultTimeoutInterval: 60000
+	defaultTimeoutInterval: 30000
     },
     baseUrl: 'http://127.0.0.1:9000/',
     rootElement: 'html'
