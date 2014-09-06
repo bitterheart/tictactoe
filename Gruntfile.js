@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             },
             your_target: {
 		options: {
-                    configFile: "test/e2e/e2e-spec.js", // Target-specific config file
+                    configFile: "protractor_conf.js", // Target-specific config file
                     args: {} // Target-specific arguments
 		}
             }
