@@ -26,6 +26,7 @@ module.exports = function (grunt) {
             }
 	}
     });
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.registerTask('p:test', [
 	'pkg',
 	'protractor_webdriver',
