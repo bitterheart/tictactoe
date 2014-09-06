@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             },
             your_target: {
 		options: {
-                    configFile: "test/e2e/*.spec", // Target-specific config file
+                    configFile: "test/e2e/*-spec.js", // Target-specific config file
                     args: {} // Target-specific arguments
 		}
             }
