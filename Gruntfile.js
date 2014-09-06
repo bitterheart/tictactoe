@@ -30,9 +30,11 @@ module.exports = function(grunt) {
             }
 	},
 	express: {
-	    options:{
-		port: 9000,
-		bases: 'src'
+	    server:{
+		options:{
+		    port: 9000,
+		    bases: 'src'
+		}
 	    }
 	}
     });
