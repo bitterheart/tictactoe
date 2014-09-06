@@ -17,8 +17,8 @@ sudo yum install -y google-chrome-stable_current_x86_64.rpm
 sudo yum install -y firefox
 sudo yum install -y bzip2
 npm install phantomjs --save-dev
-sudo yum install -y xvfb
-/usr/bin/Xvfb :99 -ac -screen 0 1024x768x24 &
+sudo yum install -y Xvfb
+Xvfb :99 -ac -screen 0 1024x768x24 &
 export DISPLAY=:99
 ./node_modules/protractor/bin/webdriver-manager update --standalone
 grunt pro --no-color
