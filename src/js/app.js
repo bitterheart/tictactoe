@@ -1,3 +1,6 @@
 (function(){
-    angular.module('app',[]);
+    var app=angular.module('app',[]);
+    app.controller('controller',['$scope',function($scope){
+	$scope.name='emory';
+    }]);
 })();
