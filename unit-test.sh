@@ -20,6 +20,7 @@ npm install --save-dev karma
 npm install grunt-karma --save-dev
 npm install karma-jasmine --save-dev
 npm install karma-chrome-launcher --save-dev
+npm install karma-html-reporter --save-dev
 npm install
 # npm install karma-ng-html2js-preprocessor --save-dev
 grunt kar
