@@ -16,7 +16,7 @@ describe('tic tac toe',function(){
 		    return {};
 		};
 	    });
-	}));
+	});
 	it('initially it should have a grid with three rows',inject(function($rootScope,$controller){
 	    $controller('controller',{$scope:$rootScope});
 	    expect($rootScope.grid.length).toEqual(3);
