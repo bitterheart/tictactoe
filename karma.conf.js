@@ -3,7 +3,8 @@ module.exports = function(config) {
 	basePath: '',
 	frameworks: ['jasmine'],
 	files: [
-	    'src/cdn/angular/1.2.9/*.js',
+	    'src/cdn/angular/1.2.9/angular.min.js',
+	    'src/cdn/angular/1.2.9/angular-mocks.js',
 	    'src/js/*.js',
 	    'test/unit/*.js'
 	],
