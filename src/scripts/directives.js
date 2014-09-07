@@ -8,9 +8,9 @@
 		    var row=angular.element(document.createElement('div')).addClass('row');
 		    for(var j=0;j<3;j++){
 			var col=angular.element(document.createElement('div')).addClass('col');
-			row.appendChild(col);
+			row.append(col);
 		    }
-		    element.appendChild(row);
+		    element.append(row);
 		}
 	    }
 	};
