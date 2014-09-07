@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 	'protractor'
     ]);
     grunt.registerTask('kar',[
-	karma
+	'karma'
     ]);
 };
 //stuff
