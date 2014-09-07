@@ -37,6 +37,11 @@ module.exports = function(grunt) {
 		    bases: ['src/html','src/js']
 		},
 	    },
+	},
+	karma: {
+	    unit: {
+		configFile: 'karma.conf.js'
+	    }
 	}
     });
     grunt.loadNpmTasks('grunt-protractor-runner');
@@ -46,6 +51,9 @@ module.exports = function(grunt) {
 	'express',
 	'protractor_webdriver',
 	'protractor'
+    ]);
+    grunt.registerTask('kar',[
+	karma
     ]);
 };
 //stuff

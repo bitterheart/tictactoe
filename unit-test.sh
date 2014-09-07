@@ -20,4 +20,4 @@ npm install karma-jasmine --save-dev
 npm install karma-chrome-launcher --save-dev
 npm install
 # npm install karma-ng-html2js-preprocessor --save-dev
-./node_modules/karma/bin/karma start karma.conf.js
+grunt kar
