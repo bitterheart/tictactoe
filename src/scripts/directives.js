@@ -3,7 +3,16 @@
     app.directive('grid',function(){
 	return{
 	    restrict:'C',
-	    template: '<div class="row"></div><div class="row"></div><div class="row"></div>'
+	    link: function(scope,element,attrs){
+		for(var i=0;i<3;i++){
+		    var row=angular.element(document.createElement('<div>')).addClass('row');
+		    for(var j=0;j<3;j++){
+			var col=angular.element(document.createElement('<div>')).addClass('col');
+			row.appendChild(col);
+		    }
+		    element.appendChild(row);
+		}
+	    }
 	};
     });
 })();
