@@ -4,6 +4,6 @@ describe('tic tac toe',function(){
 	beforeEach(module('app'));
 	it('initially',inject(function($controller,$rootScope){
 	    expect($rootScope.grid.length).toEqual(3);
-	});
+	}));
     });
 });
