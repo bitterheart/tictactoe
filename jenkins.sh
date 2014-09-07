@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo yum install -y wget
-if [ -f epel-release-7-1.noarch.rpm ]
+if [ ! -f epel-release-7-1.noarch.rpm ]
 then
     wget http://mirror.sfo12.us.leaseweb.net/epel/7/x86_64/e/epel-release-7-1.noarch.rpm
 fi
