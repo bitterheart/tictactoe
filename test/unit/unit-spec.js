@@ -11,6 +11,6 @@ describe('grid directive',function(){
 
     it("should display the welcome text properly", function() {
 	var element = $compile('<div class="grid">User</div>')($rootScope);
-	expect(element.html()).to.match(/Welcome/i);
+	expect(element.html()).toMatch(/Welcome/i);
     })
 });
