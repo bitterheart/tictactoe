@@ -7,8 +7,8 @@ describe('grid directive',function(){
 	$rootScope = $r;
     }]
 		     ));
-    it("should display the welcome text properly", function() {
+    it('should have a 3X3 grid', function() {
 	var element = $compile('<div class="grid"></div>')($rootScope);
-	expect(element.html()).toEqual('<div class="row"></div><div class="row"></div><div class="row"></div>');
+	expect(element.html()).toEqual('<div class="row"><div class="col"></div><div class="col"></div><div class="col"></div></div><div class="row"><div class="col"></div><div class="col"></div><div class="col"></div></div><div class="row"><div class="col"></div><div class="col"></div><div class="col"></div></div>');
     })
 });
