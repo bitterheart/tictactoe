@@ -5,7 +5,7 @@ describe('tic tac toe', function() {
     it('should have a title', function(){
 	expect(element(by.css('h1')).getText()).toEqual('Tic Tac Toe');
     });
-    it('should have a grid',function(){
-	expect(element(by.css('div.grid'))).toBeDefined();
+    it('should have a grid with three rows',function(){
+	expect(element.all(by.css('div.grid div.row')).count()).toEqual(3);
     });
 });
