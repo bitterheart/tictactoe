@@ -10,7 +10,7 @@ describe('tic tac toe',function(){
 		    $scope:scope
 		});
 	    });
-	}));
+	});
 	it('initially',function(){
 	    expect(scope.grid.length).toEqual(3);
 	});
