@@ -6,7 +6,7 @@ describe('tic tac toe',function(){
 	    $controller('controller',{$scope:$rootScope});
 	    expect($rootScope.grid.length).toEqual(3);
 	}));
-	describe('and there should be three columns',inject(function($rootScope,$controller){
+	it('and there should be three columns',inject(function($rootScope,$controller){
 	    $controller('controller',{$scope:$rootScope});
 	    expect($rootScope.grid[0].length).toEqual(3);
 	    expect($rootScope.grid[1].length).toEqual(3);
