@@ -3,12 +3,14 @@
     <SCRIPT SRC="https://code.angularjs.org/1.2.9/angular.min.js"></SCRIPT>
     <SCRIPT SRC="app.js"></SCRIPT>
   </HEAD>
-  <BODY ng-app="app">
-    <DIV ng-controller="controller">
-      <H1>Tic Tac Toe</H1>
-      <INPUT ng-model="name"/>
-      <BR>
-      <SPAN ng-bind="name"/>
+  <BODY>
+    <DIV ng-app="app">
+      <DIV ng-controller="controller">
+	<H1>Tic Tac Toe</H1>
+	<INPUT ng-model="name"/>
+	<BR>
+	<SPAN ng-bind="name"/>
+      </DIV>
     </DIV>
   </BODY>
 </HTML>

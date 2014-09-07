@@ -3,7 +3,7 @@ exports.config = {
 
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-	'browserName': 'firefox',
+	'browserName': 'chrome',
     },
 /*
     capabilities: {
@@ -23,5 +23,5 @@ exports.config = {
 	defaultTimeoutInterval: 30000
     },
     baseUrl: 'http://127.0.0.1:9000/',
-    rootElement: 'html'
+    rootElement: 'div'
 };
