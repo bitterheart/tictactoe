@@ -41,6 +41,10 @@ module.exports = function(grunt) {
 	karma: {
 	    unit: {
 		configFile: 'karma.conf.js'
+	    },
+	    continuous:{
+		configFile: 'config/karma.conf.js',
+		singleRun: true
 	    }
 	}
     });
@@ -53,7 +57,7 @@ module.exports = function(grunt) {
 	'protractor'
     ]);
     grunt.registerTask('kar',[
-	'karma'
+	'karma:continuous'
     ]);
 };
 //stuff
