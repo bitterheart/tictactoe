@@ -45,13 +45,10 @@ describe('tic tac toe',function(){
 		return deferred.promise;
 	    };
 	    ticTacToeService.pick=function(data){
-		return $rootScope.grid[2][2];
+		var deferred=$q.defer();
+		deferred.resolve($rootScope.grid[2][2]);
+		return deferred.promise;
 	    };
-	    console.log('before');
-	    for(var key in $rootScope){
-		console.log(key+'---'+typeof $rootScope[key]);
-	    }
-	    console.log('after');
 	    $rootScope.pickMe($rootScope.grid[1][1]);
 	    expect($rootScope.grid[0][0].value).toEqual('-');
 	    expect($rootScope.grid[0][1].value).toEqual('-');
