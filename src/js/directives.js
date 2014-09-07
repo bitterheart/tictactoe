@@ -6,4 +6,4 @@
 	    templateUrl: 'grid.html'
 	};
     });
-});
+})();
