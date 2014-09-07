@@ -2,10 +2,27 @@
   <HEAD>
     <SCRIPT SRC="cdn/angular/1.2.9/angular.min.js"></SCRIPT>
     <SCRIPT SRC="scripts/app.js"></SCRIPT>
-    <SCRIPT SRC="scripts/directives.js"></SCRIPT>
+    <SCRIPT SRC="scripts/services.js"></SCRIPT>
+    <SCRIPT SRC="scripts/controllers.js"></SCRIPT>
+    <LINK REL="stylesheet" TYPE="text/css" HREF="css/style.css"/>
   </HEAD>
   <BODY ng-app="app">
-    <H1>Tic Tac Toe</H1>
-    <DIV class="grid"></DIV>
+    <DIV ng-controller="controller">
+      <H1>Tic Tac Toe</H1>
+      <DIV ng-switch="winner">
+	<DIV ng-switch-when="0"></DIV>
+	<DIV ng-switch-when="-">The Game is On.  <SPAN ng-click="restart()">Start Over</SPAN></DIV>
+	<DIV ng-switch-when="X">Congratulations, you won!  <SPAN ng-click="restart()">New Game</SPAN></DIV>
+	<DIV ng-switch-when="O">Sorry, the computer won.  Better luck next time.  <SPAN ng-click="restart()">New Game</SPAN></DIV>
+	<DIV ng-switch-when="T">Game Over.  You have played the computer to a tie.<SPAN ng-click="restart()">New Game</SPAN></DIV>
+      </DIV>
+      <TABLE>
+	<TR ng-repeat="row in grid">
+	  <TD ng-repeat="cell in row">
+	    <BUTTON ng-disabled="'-'!=cell.value || gameOver" ng-bind="cell.value" ng-click="pickMe(cell)" ng-class="cell.status"/>
+	  </TD>
+	</TR>
+      </TABLE>
+    </DIV>
   </BODY>
 </HTML>
