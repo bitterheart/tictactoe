@@ -5,7 +5,7 @@ module.exports = function(config) {
 	files: [
 	    'src/cdn/angular/1.2.9/angular.min.js',
 	    'src/cdn/angular/1.2.9/angular-mocks.js',
-	    'src/js/*.js',
+	    'src/scripts/*.js',
 	    'test/unit/*.js'
 	],
 	exclude: [
