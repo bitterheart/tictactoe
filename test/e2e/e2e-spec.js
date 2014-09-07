@@ -13,11 +13,15 @@ describe('tic tac toe', function() {
     it('should have a grid with three rows',function(){
 	expect(element.all(by.css('div.grid div.row')).count()).toEqual(3);
     });
-    it('each row should have three columns',function(){
-	element.all(by.css('div.grid div.row')).then(function(rows){
-	    rows.forEach(function(row){
-		expect(row.elements(by.css('div.col')).count()).toEqual(3);
-	    });
+    describe('each row should have three columns',function(){
+	it('row 1 should have three columns',function(){
+	    expect(element.all(by.css('div.grid div.row:nth-child(1)')).count()).toEqual(3);
+	});
+	it('row 2 should have three columns',function(){
+	    expect(element.all(by.css('div.grid div.row:nth-child(2)')).count()).toEqual(3);
+	});
+	it('row 3 should have three columns',function(){
+	    expect(element.all(by.css('div.grid div.row:nth-child(3)')).count()).toEqual(3);
 	});
     });
     it('each cell should initially be open',function(){
