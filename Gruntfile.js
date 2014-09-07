@@ -45,7 +45,7 @@ module.exports = function(grunt) {
 	    continuous:{
 		configFile: 'karma.conf.js',
 		singleRun: true,
-		browsers: ['chrome']
+		browsers: ['karma-chrome-launcher']
 	    }
 	}
     });
