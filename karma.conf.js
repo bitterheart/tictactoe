@@ -33,7 +33,7 @@ module.exports = function(config) {
 	singleRun: true,
 	htmlReporter: {
 	    outputDir: '/tmp/karma_html',
-	    templatePath: __dirname+'/jasmine_template.html'
+	    templatePath: __dirname+'/node_modules/karma-html-reporter/jasmine_template.html'
 	}
     });
 };
