@@ -1,9 +1,9 @@
 #!/bin/bash
 
 sudo yum install -y wget
-if [ ! -f epel-release-7-1.noarch.rpm ]
+if [ -f epel-release-7-1.noarch.rpm ]
 then
-    wget http://mirror.umd.edu/fedora/epel/7/x86_64/e/epel-release-7-1.noarch.rpm
+    wget http://mirror.sfo12.us.leaseweb.net/epel/7/x86_64/e/epel-release-7-1.noarch.rpm
 fi
 sudo yum install -y epel-release-7-1.noarch.rpm || true
 sudo yum update -y

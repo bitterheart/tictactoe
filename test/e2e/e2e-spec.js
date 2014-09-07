@@ -15,13 +15,13 @@ describe('tic tac toe', function() {
     });
     describe('each row should have three columns',function(){
 	it('row 1 should have three columns',function(){
-	    expect(element.all(by.css('div.grid div.row:nth-child(1)')).count()).toEqual(3);
+	    expect(element.all(by.css('div.grid div.row:nth-child(1) div.col')).count()).toEqual(3);
 	});
 	it('row 2 should have three columns',function(){
-	    expect(element.all(by.css('div.grid div.row:nth-child(2)')).count()).toEqual(3);
+	    expect(element.all(by.css('div.grid div.row:nth-child(2) div.col')).count()).toEqual(3);
 	});
 	it('row 3 should have three columns',function(){
-	    expect(element.all(by.css('div.grid div.row:nth-child(3)')).count()).toEqual(3);
+	    expect(element.all(by.css('div.grid div.row:nth-child(3) div.col')).count()).toEqual(3);
 	});
     });
     it('each cell should initially be open',function(){
