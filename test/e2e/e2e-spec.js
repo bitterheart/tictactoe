@@ -8,4 +8,11 @@ describe('tic tac toe', function() {
     it('should have a grid with three rows',function(){
 	expect(element.all(by.css('div.grid div.row')).count()).toEqual(3);
     });
+    it('each row should have three columns',function(){
+	element.all(by.css('div.grid div.row')).then(function(rows){
+	    rows.forEach(function(row){
+		expect(row.element.all(by.css('div.col')).count()).toEqual(3);
+	    });
+	});
+    });
 });
