@@ -1,15 +1,13 @@
 "use strict";
 describe('grid directive',function(){
-    var $compile;
-    var $rootScope;
+    var element;
     beforeEach(module('app'));
-    beforeEach(inject(function(_$compile_,_$rootScope_){
-	$compile = _$compile_;
-	$rootScope = _$rootScope_;
+    beforeEach(inject(function($compile,$rootScope){
+	var element=angular.element('<div class="grid"></div>');
+	$compile(element)($rootScope);
+	$rootScope.digest();
     }));
     it('correct content',function(){
-	var element=$compile('<div class="grid"></div>');
-	$rootScope.digest();
 	expect(element.html()).toEqual('<div class="row">');
     });
 });
