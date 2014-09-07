@@ -47,7 +47,7 @@ describe('tic tac toe',function(){
 	    };
 	    console.log('before');
 	    for(var key in $rootScope){
-		console.log(key);
+		console.log(key+'---'+typeof $rootScope[key]);
 	    }
 	    console.log('after');
 	    $rootScope.pickMe($rootScope.grid[1][1]);
