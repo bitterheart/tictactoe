@@ -2,7 +2,7 @@
 describe('grid directive',function(){
     var $compile;
     var $rootScope;
-    beforeEach(module('myApp'));
+    beforeEach(module('app'));
     beforeEach(inject(function(_$compile_,_$rootScope_){
 	$compile = _$compile_;
 	$rootScope = _$rootScope_;
