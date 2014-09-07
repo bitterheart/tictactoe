@@ -36,8 +36,7 @@ describe('tic tac toe',function(){
 	    expect($rootScope.grid[2][1].status).toEqual('player');
 	    expect($rootScope.grid[2][2].status).toEqual('player');
 	}));
-	it('i make a move (center square) it should be xed, and the computer make a move',inject(function($rootScope,$controller){
-	    var ticTacToeService={};
+	it('i make a move (center square) it should be xed, and the computer make a move',inject(function($scope,ticTacToeService){
 	    var $scope={};
 	    $controller('controller',{$scope:$scope, ticTacToeService:ticTacToeService});
 	    ticTacToeService.decide=function(data,length){
