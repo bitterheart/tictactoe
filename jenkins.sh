@@ -25,4 +25,4 @@ then
 fi
 ./node_modules/protractor/bin/webdriver-manager update --standalone
 grunt pro --no-color
-exit 64
+
