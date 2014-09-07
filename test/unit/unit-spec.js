@@ -1,22 +1,7 @@
 "use strict";
 describe('tic tac toe',function(){
     describe('controller',function(){
-	beforeEach(function(){
-	    var mockTicTackToeService={};
-	    module('app',function($provide){
-		$provide.value('ticTacToeService',mockTicTackToeService);
-	    });
-	    inject(function($q){
-		mockTicTacToeService.decide=function(){
-		    var defer=$q.defer();
-		    defer.resolve({winners:{},free:1});
-		    return defer.promise;
-		};
-		mockTicTacToeService.pick=function(){
-		    return {};
-		};
-	    });
-	});
+	beforeEach(module('app'));
 	it('initially it should have a grid with three rows',inject(function($rootScope,$controller){
 	    $controller('controller',{$scope:$rootScope});
 	    expect($rootScope.grid.length).toEqual(3);
