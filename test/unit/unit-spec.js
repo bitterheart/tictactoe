@@ -1,4 +1,4 @@
- "use strict";
+"use strict";
 describe('grid directive',function(){
     var $compile;
     var $rootScope;
@@ -11,5 +11,5 @@ describe('grid directive',function(){
 	var element=$compile('<div class="grid"></div>');
 	$rootScope.digest();
 	expect(element.html()).toEqual('<div class="row">');
-    }
+    });
 });
