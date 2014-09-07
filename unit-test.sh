@@ -6,3 +6,4 @@ then
 fi
 npm install --save-dev karma
 npm install karma-ng-html2js-preprocessor --save-dev
+karma start karma.conf.js
