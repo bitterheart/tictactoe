@@ -44,13 +44,15 @@ module.exports = function(grunt) {
 	    },
 	    continuous:{
 		configFile: 'config/karma.conf.js',
-		singleRun: true
+		singleRun: true,
+		browsers: ['chrome']
 	    }
 	}
     });
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-protractor-webdriver');
     grunt.loadNpmTasks('grunt-express');
+    grunt.loadNpmTasks('grunt-karma');
     grunt.registerTask('pro', [
 	'express',
 	'protractor_webdriver',
