@@ -10,7 +10,7 @@ then
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 fi
 sudo yum install -y google-chrome-stable_current_x86_64.rpm
-sudo yum install -y Xvfb
+sudo yum -y install nodejs-grunt-cli npm xvfb
 if [ ! -d /tmp/.X99-lock ]
 then
     Xvfb :99 -ac -screen 0 1024x768x24 &
