@@ -1,16 +1,16 @@
 "use strict";
 describe('grid directive',function(){
-    var element;
-    var scope;
+    var $compile, $rootScope;
+
     beforeEach(module('app'));
-    beforeEach(inject(function($compile,$rootScope){
-	var element=angular.element('<div class="grid"></div>');
-	scope=$rootScope;
-	scope.defined=false;
-	$compile(element)(scope);
-	scope.digest();
-    }));
-    it('correct content',function(){
-	expect(element.scope().html()).toEqual('<div class="row">');
-    });
+    beforeEach(inject(['$compile','$rootScope', function($c, $r) {
+	$compile = $c;
+	$rootScope = $r;
+    }]
+		     ));
+
+    it("should display the welcome text properly", function() {
+	var element = $compile('<div class="grid">User</div>')($rootScope);
+	expect(element.html()).to.match(/Welcome/i);
+    })
 });
