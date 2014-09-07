@@ -16,7 +16,7 @@ describe('tic tac toe', function() {
     it('each row should have three columns',function(){
 	element.all(by.css('div.grid div.row')).then(function(rows){
 	    rows.forEach(function(row){
-		expect(row.element(by.css('div.col')).count()).toEqual(3);
+		expect(row.elements(by.css('div.col')).count()).toEqual(3);
 	    });
 	});
     });
