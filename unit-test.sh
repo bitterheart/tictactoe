@@ -17,6 +17,7 @@ then
     export DISPLAY=:99
 fi
 npm install --save-dev karma
+npm install grunt-karma --save-dev
 npm install karma-jasmine --save-dev
 npm install karma-chrome-launcher --save-dev
 npm install
