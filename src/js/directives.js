@@ -3,7 +3,7 @@
     app.directive('grid',function(){
 	return{
 	    restrict:'C',
-	    templateUrl: 'grid.html'
+	    template: 'fadsfdsfds'
 	};
     });
 })();
