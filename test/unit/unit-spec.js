@@ -36,39 +36,38 @@ describe('tic tac toe',function(){
 	    expect($rootScope.grid[2][1].status).toEqual('player');
 	    expect($rootScope.grid[2][2].status).toEqual('player');
 	}));
-	it('i make a move (center square) it should be xed, and the computer make a move',inject(function($scope,ticTacToeService){
-	    var $scope={};
-	    $controller('controller',{$scope:$scope, ticTacToeService:ticTacToeService});
+	it('i make a move (center square) it should be xed, and the computer make a move',inject(function($rootScope,$controller){
+	    $controller('controller',{$scope:$rootScope, ticTacToeService:ticTacToeService});
 	    ticTacToeService.decide=function(data,length){
 		return {winners:{},free:8};
 	    };
 	    ticTacToeService.pick=function(data){
-		return $scope.grid[2][2];
+		return $rootScope.grid[2][2];
 	    };
 	    console.log('before');
-	    for(var key in $scope){
+	    for(var key in $rootScope){
 		console.log(key);
 	    }
 	    console.log('after');
-	    $scope.pickMe($scope.grid[1][1]);
-	    expect($scope.grid[0][0].value).toEqual('-');
-	    expect($scope.grid[0][1].value).toEqual('-');
-	    expect($scope.grid[0][2].value).toEqual('-');
-	    expect($scope.grid[1][0].value).toEqual('-');
-	    expect($scope.grid[1][1].value).toEqual('X');
-	    expect($scope.grid[1][2].value).toEqual('-');
-	    expect($scope.grid[2][0].value).toEqual('-');
-	    expect($scope.grid[2][1].value).toEqual('-');
-	    expect($scope.grid[2][2].value).toEqual('-');
-	    expect($scope.grid[0][0].status).toEqual('player');
-	    expect($scope.grid[0][1].status).toEqual('player');
-	    expect($scope.grid[0][2].status).toEqual('player');
-	    expect($scope.grid[1][0].status).toEqual('player');
-	    expect($scope.grid[1][1].status).toEqual('player');
-	    expect($scope.grid[1][2].status).toEqual('player');
-	    expect($scope.grid[2][0].status).toEqual('player');
-	    expect($scope.grid[2][1].status).toEqual('player');
-	    expect($scope.grid[2][2].status).toEqual('player');
+	    $rootScope.pickMe($rootScope.grid[1][1]);
+	    expect($rootScope.grid[0][0].value).toEqual('-');
+	    expect($rootScope.grid[0][1].value).toEqual('-');
+	    expect($rootScope.grid[0][2].value).toEqual('-');
+	    expect($rootScope.grid[1][0].value).toEqual('-');
+	    expect($rootScope.grid[1][1].value).toEqual('X');
+	    expect($rootScope.grid[1][2].value).toEqual('-');
+	    expect($rootScope.grid[2][0].value).toEqual('-');
+	    expect($rootScope.grid[2][1].value).toEqual('-');
+	    expect($rootScope.grid[2][2].value).toEqual('-');
+	    expect($rootScope.grid[0][0].status).toEqual('player');
+	    expect($rootScope.grid[0][1].status).toEqual('player');
+	    expect($rootScope.grid[0][2].status).toEqual('player');
+	    expect($rootScope.grid[1][0].status).toEqual('player');
+	    expect($rootScope.grid[1][1].status).toEqual('player');
+	    expect($rootScope.grid[1][2].status).toEqual('player');
+	    expect($rootScope.grid[2][0].status).toEqual('player');
+	    expect($rootScope.grid[2][1].status).toEqual('player');
+	    expect($rootScope.grid[2][2].status).toEqual('player');
 	}));
     });
 });
