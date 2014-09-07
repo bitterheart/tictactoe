@@ -2,17 +2,17 @@
 describe('tic tac toe',function(){
     describe('controller',function(){
 	beforeEach(function(){
-	    var mockTickTackToeService={};
+	    var mockTicTackToeService={};
 	    module('app',function($provide){
-		$provide.value('ticTacToeService',mockTickTackToeService);
+		$provide.value('ticTacToeService',mockTicTackToeService);
 	    });
 	    inject(function($q){
-		mockTickTacToeService.decide=function(){
+		mockTicTacToeService.decide=function(){
 		    var defer=$q.defer();
 		    defer.resolve({winners:{},free:1});
 		    return defer.promise;
 		};
-		mockTickTacToeService.pick=function(){
+		mockTicTacToeService.pick=function(){
 		    return {};
 		};
 	    });
