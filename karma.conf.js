@@ -3,9 +3,9 @@ module.exports = function(config) {
 	basePath: '',
 	frameworks: ['jasmine'],
 	files: [
+	    'src/cdn/angular/1.2.9/*.js',
 	    'src/js/*.js',
-	    'test/unit/*.js',
-	    'src/cdn/angular/1.2.9/*.js'
+	    'test/unit/*.js'
 	],
 	exclude: [
 	],
