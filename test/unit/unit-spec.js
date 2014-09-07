@@ -46,6 +46,11 @@ describe('tic tac toe',function(){
 	    ticTacToeService.pick=function(data){
 		return $scope.grid[2][2];
 	    };
+	    console.log('before');
+	    for(var key in $scope){
+		console.log(key);
+	    }
+	    console.log('after');
 	    $scope.pickMe($scope.grid[1][1]);
 	    expect($scope.grid[0][0].value).toEqual('-');
 	    expect($scope.grid[0][1].value).toEqual('-');
