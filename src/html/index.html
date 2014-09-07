@@ -2,15 +2,13 @@
   <HEAD>
     <SCRIPT SRC="https://code.angularjs.org/1.2.9/angular.min.js"></SCRIPT>
     <SCRIPT SRC="app.js"></SCRIPT>
-    <SCRIPT SRC="directives.js"></SCRIPT>
   </HEAD>
-  <BODY>
-    <DIV ng-app="app">
-      <DIV ng-controller="controller">
-	<H1>Tic Tac Toe</H1>
-	<DIV class="grid">
-	</DIV>
-      </DIV>
+  <BODY ng-app="app">
+    <H1>Tic Tac Toe</H1>
+    <DIV ng-controller="controller">
+      <INPUT ng-model="name"/>
+      <BR>
+      <SPAN ng-bind="name"/>
     </DIV>
   </BODY>
 </HTML>
