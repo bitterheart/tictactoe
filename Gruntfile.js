@@ -20,8 +20,7 @@ module.exports = function(grunt) {
 		noColor: false, // If true, protractor will not use colors in its output.
 		args: {
 		    // Arguments passed to the command
-		},
-		rootElement: 'body'
+		}
             },
             your_target: {
 		options: {
