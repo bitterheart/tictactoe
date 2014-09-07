@@ -16,6 +16,7 @@ fi
 sudo yum install -y google-chrome-stable_current_x86_64.rpm
 sudo yum install -y firefox
 sudo yum install -y bzip2
+npm install protractor-html-screenshot-reporter --save-dev
 npm install phantomjs --save-dev
 sudo yum install -y Xvfb
 if [ ! -d /tmp/.X99-lock ]

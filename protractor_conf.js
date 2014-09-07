@@ -1,3 +1,4 @@
+var HtmlReporter = require('protractor-html-screenshot-reporter');
 exports.config = {
     seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
 
@@ -23,5 +24,13 @@ exports.config = {
 	defaultTimeoutInterval: 30000
     },
     baseUrl: 'http://127.0.0.1:9000/',
-    rootElement: 'div'
+    rootElement: 'div',
+    onPrepare: function() {
+	// Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
+	jasmine.getEnv().addReporter(new HtmlReporter({
+            baseDirectory: '/tmp/screenshots',
+	    takeScreenShotsOnlyForFailedSpecs: true,
+	    docTitle: 'protractor reporter'
+	}));
+    }
 };
