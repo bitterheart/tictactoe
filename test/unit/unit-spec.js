@@ -1,7 +1,7 @@
 "use strict";
 describe('tic tac toe',function(){
+    beforeEach(module('app'));
     describe('controller',function(){
-	beforeEach(module('app'));
 	it('initially it should have a grid with three rows',inject(function($rootScope,$controller){
 	    $controller('controller',{$scope:$rootScope});
 	    expect($rootScope.grid.length).toEqual(3);
