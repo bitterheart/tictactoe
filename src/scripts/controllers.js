@@ -20,23 +20,23 @@
 	    $scope.winner='0';
 	};
 	$scope.restart();
+	var updateStatus=function(response){
+	    $scope.winner='-';
+	    console.log('xxxxxxxxxxxxxxxxxxx '+response);
+	    response.winners.forEach(function(winner){
+		winner.forEach(function(w){
+		    w.status='winner';
+		    $scope.winner=w.value;
+		});
+		$scope.gameOver=true;
+	    });
+	    if(response.free===0){
+		$scope.gameOver=true;
+		$scope.winner='T';
+	    }
+	};
 	$scope.pickMe=function(cell){
 	    cell.value='X';
-	    var updateStatus=function(response){
-		$scope.winner='-';
-		console.log('xxxxxxxxxxxxxxxxxxx '+response);
-		response.winners.forEach(function(winner){
-		    winner.forEach(function(w){
-			w.status='winner';
-			$scope.winner=w.value;
-		    });
-		    $scope.gameOver=true;
-		});
-		if(response.free===0){
-		    $scope.gameOver=true;
-		    $scope.winner='T';
-		}
-	    }
 	    ticTacToeService.decide(data,length).then(function(response){
 		updateStatus(response);
 		if(!$scope.gameOver)
