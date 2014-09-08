@@ -13,11 +13,10 @@ then
 fi
 sudo yum install -y google-chrome-stable_current_x86_64.rpm
 sudo yum -y install nodejs-grunt-cli npm xvfb
-if [ ! -d /tmp/.X99-lock ]
-then
+
     Xvfb :99 -ac -screen 0 1024x768x24 &
     export DISPLAY=:99
-fi
+
 npm install --save-dev karma
 npm install grunt-karma --save-dev
 npm install karma-jasmine --save-dev
