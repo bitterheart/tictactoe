@@ -36,6 +36,15 @@ describe('tic tac toe',function(){
 	    expect($rootScope.grid[2][1].status).toEqual('player');
 	    expect($rootScope.grid[2][2].status).toEqual('player');
 	}));
+	it('initially the winner should be 0',inject(function($rootScope,$controller){
+	    $controller('controller',{$scope:$rootScope});
+	    expect($rootScope.winner).toEqual(0);
+	}));
+	it('initially gameover should be false',inject(function($rootScope,$controller){
+	    $controller('controller',{$scope:$rootScope});
+	    expect($rootScope.gameOver).toEqual(false);
+	}));
+	it('initially the winner should be 0',
 	it('i make a move (center square) it should be xed, and the computer make a move',inject(function($rootScope,$controller,$q){
 	    var ticTacToeService={};
 	    $controller('controller',{$scope:$rootScope, ticTacToeService:ticTacToeService});
@@ -68,6 +77,7 @@ describe('tic tac toe',function(){
 	    expect($rootScope.grid[2][0].status).toEqual('player');
 	    expect($rootScope.grid[2][1].status).toEqual('player');
 	    expect($rootScope.grid[2][2].status).toEqual('player');
+	    expect($rootScope.winner).toEqual('-');
 	}));
     });
 });
