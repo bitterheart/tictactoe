@@ -95,7 +95,9 @@ describe('tic tac toe',function(){
 	    };
 	    $rootScope.pickMe($rootScope.grid[1][1]);
 	    decideDeferred.resolve({winners:{},free:8});
+	    $rootScope.$apply();
 	    pickDeferred.resolve($rootScope.grid[2][2]);
+	    $rootScope.$apply();
 	    expect($rootScope.grid[0][0].value).toEqual('-');
 	    expect($rootScope.grid[0][1].value).toEqual('-');
 	    expect($rootScope.grid[0][2].value).toEqual('-');
