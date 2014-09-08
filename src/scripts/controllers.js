@@ -37,7 +37,9 @@
 	};
 	$scope.pickMe=function(cell){
 	    cell.value='X';
+	    console.log('aaaaaaaaaaaaaaaaa');
 	    ticTacToeService.decide(data,length).then(function(response){
+		console.log('bbbbbbbbbbbbbbbbb');
 		updateStatus(response);
 		if(!$scope.gameOver)
 		{
