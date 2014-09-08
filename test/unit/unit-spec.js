@@ -38,7 +38,7 @@ describe('tic tac toe',function(){
 	}));
 	it('initially the winner should be 0',inject(function($rootScope,$controller){
 	    $controller('controller',{$scope:$rootScope});
-	    expect($rootScope.winner).toEqual(0);
+	    expect($rootScope.winner).toEqual('0');
 	}));
 	it('initially gameover should be false',inject(function($rootScope,$controller){
 	    $controller('controller',{$scope:$rootScope});
