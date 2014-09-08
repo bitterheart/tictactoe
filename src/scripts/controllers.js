@@ -22,7 +22,6 @@
 	$scope.restart();
 	var updateStatus=function(response){
 	    $scope.winner='-';
-	    console.log('xxxxxxxxxxxxxxxxxxx '+response);
 	    response.winners.forEach(function(winner){
 		winner.forEach(function(w){
 		    w.status='winner';
