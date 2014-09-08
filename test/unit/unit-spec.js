@@ -383,7 +383,7 @@ describe('tic tac toe',function(){
 		    expect(response.free).toEqual(1);
 		});
 	    }));
-	});
+	}));
 	describe('pick',function(){
 	    it('no choice',inject(function($rootScope,ticTacToeService){
 		var data=[{value:'b'},{value:'a'},{value:'b'},{value:'a'},{value:'-'},{value:'a'},{value:'b'},{value:'a'},{value:'b'}];
