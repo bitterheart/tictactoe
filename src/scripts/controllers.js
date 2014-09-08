@@ -24,7 +24,7 @@
 	    cell.value='X';
 	    var updateStatus=function(response){
 		$scope.winner='-';
-		console.log('xxxxxxxxxxxxxxxxxxx '+response.winners);
+		console.log('xxxxxxxxxxxxxxxxxxx '+response);
 		response.winners.forEach(function(winner){
 		    winner.forEach(function(w){
 			w.status='winner';
