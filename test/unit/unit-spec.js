@@ -192,7 +192,7 @@ describe('tic tac toe',function(){
 	it('let us fudge the data and make the computer the winner',inject(function($rootScope,$controller,$q){
 	    var ticTacToeService={};
 	    $controller('controller',{$scope:$rootScope, ticTacToeService:ticTacToeService});
-	    $rootScope[2][2].value='O';
+	    $rootScope.grid[2][2].value='O';
 	    var decideDeferred=$q.defer();
 	    ticTacToeService.decide=function(data,length){
 		return decideDeferred.promise;
