@@ -131,7 +131,7 @@ describe('tic tac toe',function(){
 		return pickDeferred.promise;
 	    };
 	    $rootScope.pickMe($rootScope.grid[1][1]);
-	    decideDeferred.resolve({winners:[[$rootScope.grid[0][1]],[$rootScope.grid[1][0]],[$rootScope.grid[1][1]],[$rootScope.grid[1][2]],[$rootScope.grid[2][1]]],free:5});
+	    decideDeferred.resolve({winners:[[$rootScope.grid[0][1]],[$rootScope.grid[1][0]],[$rootScope.grid[1][1]],[$rootScope.grid[1][2]],[$rootScope.grid[2][1]]],free:4});
 	    $rootScope.$apply();
 	    expect($rootScope.grid[0][0].value).toEqual('-');
 	    expect($rootScope.grid[0][1].value).toEqual('-');
@@ -146,7 +146,7 @@ describe('tic tac toe',function(){
 	    expect($rootScope.grid[0][1].status).toEqual('winner');
 	    expect($rootScope.grid[0][2].status).toEqual('player');
 	    expect($rootScope.grid[1][0].status).toEqual('winner');
-	    expect($rootScope.grid[1][1].status).toEqual('player');
+	    expect($rootScope.grid[1][1].status).toEqual('winner');
 	    expect($rootScope.grid[1][2].status).toEqual('winner');
 	    expect($rootScope.grid[2][0].status).toEqual('player');
 	    expect($rootScope.grid[2][1].status).toEqual('winner');
