@@ -48,20 +48,18 @@ describe('tic tac toe',function(){
 	    $controller('controller',{$scope:$rootScope});
 	    expect($rootScope.winner).toEqual(0);
 	}));
-	it('i make a move (center square) it should be xed, and the computer make a move',inject(function($rootScope,$controller,$q){
+	it('i make a move (center square) it should be xed',inject(function($rootScope,$controller,$q){
 	    var ticTacToeService={};
 	    $controller('controller',{$scope:$rootScope, ticTacToeService:ticTacToeService});
+	    var decideDeferred=$q.defer();
 	    ticTacToeService.decide=function(data,length){
-		var deferred=$q.defer();
-		deferred.resolve({winners:{},free:8});
-		return deferred.promise;
+		return decideDeferred.promise;
 	    };
 	    ticTacToeService.pick=function(data){
-		var deferred=$q.defer();
-		deferred.resolve($rootScope.grid[2][2]);
-		return deferred.promise;
+		return pickDeferred.promise;
 	    };
 	    $rootScope.pickMe($rootScope.grid[1][1]);
+	    decideDeferred.resolve({winners:{},free:8});
 	    expect($rootScope.grid[0][0].value).toEqual('-');
 	    expect($rootScope.grid[0][1].value).toEqual('-');
 	    expect($rootScope.grid[0][2].value).toEqual('-');
@@ -80,7 +78,7 @@ describe('tic tac toe',function(){
 	    expect($rootScope.grid[2][0].status).toEqual('player');
 	    expect($rootScope.grid[2][1].status).toEqual('player');
 	    expect($rootScope.grid[2][2].status).toEqual('player');
-	    expect($rootScope.winner).toEqual('-');
+	    expect($rootScope.winner).toEqual('0');
 	    expect($rootScope.gameOver).toEqual(false);
 	}));
     });
