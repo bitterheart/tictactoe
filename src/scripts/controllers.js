@@ -22,6 +22,10 @@
 	$scope.restart();
 	var updateStatus=function(response){
 	    $scope.winner='-';
+	    if(response.free===0){
+		$scope.gameOver=true;
+		$scope.winner='T';
+	    }
 	    response.winners.forEach(function(winner){
 		winner.forEach(function(w){
 		    w.status='winner';
@@ -29,10 +33,6 @@
 		});
 		$scope.gameOver=true;
 	    });
-	    if(response.free===0){
-		$scope.gameOver=true;
-		$scope.winner='T';
-	    }
 	};
 	$scope.pickMe=function(cell){
 	    cell.value='X';

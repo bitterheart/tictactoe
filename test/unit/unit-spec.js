@@ -218,7 +218,7 @@ describe('tic tac toe',function(){
 	    expect($rootScope.grid[2][0].status).toEqual('player');
 	    expect($rootScope.grid[2][1].status).toEqual('player');
 	    expect($rootScope.grid[2][2].status).toEqual('winner');
-	    expect($rootScope.winner).toEqual('X');
+	    expect($rootScope.winner).toEqual('O');
 	    expect($rootScope.gameOver).toEqual(true);
 	}));
 	it('i make a move (center square), and the service (wrongly) calls a tie',inject(function($rootScope,$controller,$q){
