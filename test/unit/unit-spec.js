@@ -233,7 +233,7 @@ describe('tic tac toe',function(){
 		return pickDeferred.promise;
 	    };
 	    $rootScope.pickMe($rootScope.grid[1][1]);
-	    decideDeferred.resolve({winners:[[],free:0});
+	    decideDeferred.resolve({winners:[],free:0});
 	    $rootScope.$apply();
 	    expect($rootScope.grid[0][0].value).toEqual('-');
 	    expect($rootScope.grid[0][1].value).toEqual('-');
@@ -291,5 +291,10 @@ describe('tic tac toe',function(){
 	    expect($rootScope.winner).toEqual('X');
 	    expect($rootScope.gameOver).toEqual(true);
 	}));
+    });
+    describe('tic tac toe service',function(){
+	describe('decide',function(){
+	    
+	});
     });
 });
