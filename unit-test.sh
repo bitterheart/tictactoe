@@ -12,6 +12,8 @@ then
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 fi
 sudo yum install -y google-chrome-stable_current_x86_64.rpm
+sudo ln -sf /usr/bin/google-chrome /usr/bin/Chrome
+sudo ln -sf /usr/bin/google-chrome /usr/bin/chrome
 sudo yum -y install nodejs-grunt-cli npm xvfb
 
     Xvfb :99 -ac -screen 0 1024x768x24 &
