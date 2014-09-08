@@ -291,6 +291,36 @@ describe('tic tac toe',function(){
 	    expect($rootScope.winner).toEqual('X');
 	    expect($rootScope.gameOver).toEqual(true);
 	}));
+	it('let us mess everything up and restart it',inject(function($rootScope,$controller){
+	    $controller('controller',{$scope:$rootScope});
+	    $rootScope.grid='wrong';
+	    $rootScope.winner='wrong';
+	    $rootScope.gameOver='wrong';
+	    expect($rootScope.grid.length).toEqual(3);
+	    expect($rootScope.grid[0].length).toEqual(3);
+	    expect($rootScope.grid[1].length).toEqual(3);
+	    expect($rootScope.grid[2].length).toEqual(3);
+	    expect($rootScope.grid[0][0].value).toEqual('-');
+	    expect($rootScope.grid[0][1].value).toEqual('-');
+	    expect($rootScope.grid[0][2].value).toEqual('-');
+	    expect($rootScope.grid[1][0].value).toEqual('-');
+	    expect($rootScope.grid[1][1].value).toEqual('-');
+	    expect($rootScope.grid[1][2].value).toEqual('-');
+	    expect($rootScope.grid[2][0].value).toEqual('-');
+	    expect($rootScope.grid[2][1].value).toEqual('-');
+	    expect($rootScope.grid[2][2].value).toEqual('-');
+	    expect($rootScope.grid[0][0].status).toEqual('player');
+	    expect($rootScope.grid[0][1].status).toEqual('player');
+	    expect($rootScope.grid[0][2].status).toEqual('player');
+	    expect($rootScope.grid[1][0].status).toEqual('player');
+	    expect($rootScope.grid[1][1].status).toEqual('player');
+	    expect($rootScope.grid[1][2].status).toEqual('player');
+	    expect($rootScope.grid[2][0].status).toEqual('player');
+	    expect($rootScope.grid[2][1].status).toEqual('player');
+	    expect($rootScope.grid[2][2].status).toEqual('player');
+	    expect($rootScope.winner).toEqual('0');
+	    expect($rootScope.gameOver).toEqual(false);
+	}));
     });
     describe('tic tac toe service',function(){
 	describe('decide',function(){
