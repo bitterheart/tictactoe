@@ -55,6 +55,7 @@ describe('tic tac toe',function(){
 	    ticTacToeService.decide=function(data,length){
 		return decideDeferred.promise;
 	    };
+	    var pickDeferred=$q.defer();
 	    ticTacToeService.pick=function(data){
 		return pickDeferred.promise;
 	    };
@@ -88,6 +89,7 @@ describe('tic tac toe',function(){
 	    ticTacToeService.decide=function(data,length){
 		return decideDeferred.promise;
 	    };
+	    var pickDeferred=$q.defer();
 	    ticTacToeService.pick=function(data){
 		return pickDeferred.promise;
 	    };
@@ -112,7 +114,7 @@ describe('tic tac toe',function(){
 	    expect($rootScope.grid[2][0].status).toEqual('player');
 	    expect($rootScope.grid[2][1].status).toEqual('player');
 	    expect($rootScope.grid[2][2].status).toEqual('player');
-	    expect($rootScope.winner).toEqual('0');
+	    expect($rootScope.winner).toEqual('-');
 	    expect($rootScope.gameOver).toEqual(false);
 	}));
     });
