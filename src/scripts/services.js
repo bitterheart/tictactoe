@@ -47,7 +47,7 @@
 		if(0<f.length){
 		    deferred.resolve(f[Math.floor(Math.random()*f.length)]);
 		}else{
-		    deferred.reject();
+		    deferred.reject('illegal move');
 		}
 		return deferred.promise;
 	    }
