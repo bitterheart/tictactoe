@@ -119,7 +119,7 @@ describe('tic tac toe',function(){
 	    expect($rootScope.winner).toEqual('-');
 	    expect($rootScope.gameOver).toEqual(false);
 	}));
-	it('i make a move (center square), and the service (wrongly) declares me the winner',inject(function($rootScope,$controller,$q){
+	it('i make a move (center square), and the service (wrongly) declares - the winner',inject(function($rootScope,$controller,$q){
 	    var ticTacToeService={};
 	    $controller('controller',{$scope:$rootScope, ticTacToeService:ticTacToeService});
 	    var decideDeferred=$q.defer();
@@ -134,22 +134,57 @@ describe('tic tac toe',function(){
 	    decideDeferred.resolve({winners:[[$rootScope.grid[0][1]],[$rootScope.grid[1][0]],[$rootScope.grid[1][1]],[$rootScope.grid[1][2]],[$rootScope.grid[2][1]]],free:5});
 	    $rootScope.$apply();
 	    expect($rootScope.grid[0][0].value).toEqual('-');
-	    expect($rootScope.grid[0][1].value).toEqual('X');
+	    expect($rootScope.grid[0][1].value).toEqual('-');
 	    expect($rootScope.grid[0][2].value).toEqual('-');
-	    expect($rootScope.grid[1][0].value).toEqual('X');
-	    expect($rootScope.grid[1][1].value).toEqual('-');
-	    expect($rootScope.grid[1][2].value).toEqual('X');
+	    expect($rootScope.grid[1][0].value).toEqual('-');
+	    expect($rootScope.grid[1][1].value).toEqual('X');
+	    expect($rootScope.grid[1][2].value).toEqual('-');
 	    expect($rootScope.grid[2][0].value).toEqual('-');
-	    expect($rootScope.grid[2][1].value).toEqual('X');
+	    expect($rootScope.grid[2][1].value).toEqual('-');
 	    expect($rootScope.grid[2][2].value).toEqual('-');
 	    expect($rootScope.grid[0][0].status).toEqual('player');
 	    expect($rootScope.grid[0][1].status).toEqual('winner');
 	    expect($rootScope.grid[0][2].status).toEqual('player');
-	    expect($rootScope.grid[1][0].status).toEqual('winnr');
+	    expect($rootScope.grid[1][0].status).toEqual('winner');
 	    expect($rootScope.grid[1][1].status).toEqual('player');
 	    expect($rootScope.grid[1][2].status).toEqual('winner');
 	    expect($rootScope.grid[2][0].status).toEqual('player');
 	    expect($rootScope.grid[2][1].status).toEqual('winner');
+	    expect($rootScope.grid[2][2].status).toEqual('player');
+	    expect($rootScope.winner).toEqual('-');
+	    expect($rootScope.gameOver).toEqual(true);
+	}));
+	it('i make a move (center square), and the service (wrongly) declares me the winner',inject(function($rootScope,$controller,$q){
+	    var ticTacToeService={};
+	    $controller('controller',{$scope:$rootScope, ticTacToeService:ticTacToeService});
+	    var decideDeferred=$q.defer();
+	    ticTacToeService.decide=function(data,length){
+		return decideDeferred.promise;
+	    };
+	    var pickDeferred=$q.defer();
+	    ticTacToeService.pick=function(data){
+		return pickDeferred.promise;
+	    };
+	    $rootScope.pickMe($rootScope.grid[1][1]);
+	    decideDeferred.resolve({winners:[[$rootScope.grid[0][1]],[$rootScope.grid[1][0]],[$rootScope.grid[0][0]],[$rootScope.grid[1][2]],[$rootScope.grid[1][1]]],free:5});
+	    $rootScope.$apply();
+	    expect($rootScope.grid[0][0].value).toEqual('-');
+	    expect($rootScope.grid[0][1].value).toEqual('-');
+	    expect($rootScope.grid[0][2].value).toEqual('-');
+	    expect($rootScope.grid[1][0].value).toEqual('-');
+	    expect($rootScope.grid[1][1].value).toEqual('X');
+	    expect($rootScope.grid[1][2].value).toEqual('-');
+	    expect($rootScope.grid[2][0].value).toEqual('-');
+	    expect($rootScope.grid[2][1].value).toEqual('-');
+	    expect($rootScope.grid[2][2].value).toEqual('-');
+	    expect($rootScope.grid[0][0].status).toEqual('winner');
+	    expect($rootScope.grid[0][1].status).toEqual('winner');
+	    expect($rootScope.grid[0][2].status).toEqual('player');
+	    expect($rootScope.grid[1][0].status).toEqual('winner');
+	    expect($rootScope.grid[1][1].status).toEqual('player');
+	    expect($rootScope.grid[1][2].status).toEqual('winner');
+	    expect($rootScope.grid[2][0].status).toEqual('player');
+	    expect($rootScope.grid[2][1].status).toEqual('player');
 	    expect($rootScope.grid[2][2].status).toEqual('player');
 	    expect($rootScope.winner).toEqual('X');
 	    expect($rootScope.gameOver).toEqual(true);
