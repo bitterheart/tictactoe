@@ -325,7 +325,7 @@ describe('tic tac toe',function(){
     describe('tic tac toe service',function(){
 	describe('decide',function(){
 	    it('downward diagonal winner',inject(function($rootScope,ticTacToeService){
-		var data=[{value='a'},{value='-'},{value='-'},{value='-'},{value='a'},{value='-'},{value='-'},{value='-'},{value='a'}];
+		var data=[{value:'a'},{value:'-'},{value:'-'},{value:'-'},{value:'a'},{value:'-'},{value:'-'},{value:'-'},{value:'a'}];
 		ticTacToeService.decide(data,3).then(function(response){
 		    expect(response.winners[0].length).toEqual(1);
 		    expect(response.winners[0][0]).toEqual(data[0]);
@@ -335,7 +335,7 @@ describe('tic tac toe',function(){
 		});
 	    }));
 	    it('upward diagonal winner',inject(function($rootScope,ticTacToeService){
-		var data=[{value='-'},{value='-'},{value='a'},{value='-'},{value='a'},{value='-'},{value='a'},{value='-'},{value='-'}];
+		var data=[{value:'-'},{value:'-'},{value:'a'},{value:'-'},{value:'a'},{value:'-'},{value:'a'},{value:'-'},{value:'-'}];
 		ticTacToeService.decide(data,3).then(function(response){
 		    expect(response.winners[0].length).toEqual(1);
 		    expect(response.winners[0][0]).toEqual(data[2]);
@@ -345,7 +345,7 @@ describe('tic tac toe',function(){
 		});
 	    }));
 	    it('row winner',inject(function($rootScope,ticTacToeService){
-		var data=[{value='-'},{value='-'},{value='-'},{value='a'},{value='a'},{value='a'},{value='-'},{value='-'},{value='-'}];
+		var data=[{value:'-'},{value:'-'},{value:'-'},{value:'a'},{value:'a'},{value:'a'},{value:'-'},{value:'-'},{value:'-'}];
 		ticTacToeService.decide(data,3).then(function(response){
 		    expect(response.winners[0].length).toEqual(1);
 		    expect(response.winners[0][0]).toEqual(data[4]);
@@ -355,7 +355,7 @@ describe('tic tac toe',function(){
 		});
 	    }));
 	    it('column winner',inject(function($rootScope,ticTacToeService){
-		var data=[{value='-'},{value='a'},{value='-'},{value='-'},{value='a'},{value='-'},{value='-'},{value='a'},{value='-'}];
+		var data=[{value:'-'},{value:'a'},{value:'-'},{value:'-'},{value:'a'},{value:'-'},{value:'-'},{value:'a'},{value:'-'}];
 		ticTacToeService.decide(data,3).then(function(response){
 		    expect(response.winners[0].length).toEqual(1);
 		    expect(response.winners[0][0]).toEqual(data[2]);
@@ -365,7 +365,7 @@ describe('tic tac toe',function(){
 		});
 	    }));
 	    it('multiple winners',inject(function($rootScope,ticTacToeService){
-		var data=[{value='b'},{value='a'},{value='b'},{value='b'},{value='a'},{value='b'},{value='b'},{value='a'},{value='b'}];
+		var data=[{value:'b'},{value:'a'},{value:'b'},{value:'b'},{value:'a'},{value:'b'},{value:'b'},{value:'a'},{value:'b'}];
 		ticTacToeService.decide(data,3).then(function(response){
 		    expect(response.winners[0].length).toEqual(2);
 		    expect(response.winners[0][0]).toEqual(data[0]);
@@ -377,7 +377,7 @@ describe('tic tac toe',function(){
 		    expect(response.free).toEqual(0);
 		});
 	    it('no winners',inject(function($rootScope,ticTacToeService){
-		var data=[{value='b'},{value='a'},{value='b'},{value='a'},{value='-'},{value='a'},{value='b'},{value='a'},{value='b'}];
+		var data=[{value:'b'},{value:'a'},{value:'b'},{value:'a'},{value:'-'},{value:'a'},{value:'b'},{value:'a'},{value:'b'}];
 		ticTacToeService.decide(data,3).then(function(response){
 		    expect(response.winners[0].length).toEqual(0);
 		    expect(response.free).toEqual(1);
@@ -386,13 +386,13 @@ describe('tic tac toe',function(){
 	});
 	describe('pick',function(){
 	    it('no choice',inject(function($rootScope,ticTacToeService){
-		var data=[{value='b'},{value='a'},{value='b'},{value='a'},{value='-'},{value='a'},{value='b'},{value='a'},{value='b'}];
+		var data=[{value:'b'},{value:'a'},{value:'b'},{value:'a'},{value:'-'},{value:'a'},{value:'b'},{value:'a'},{value:'b'}];
 		ticTacToeService.decide(data).then(function(response){
 		    expect(response).toEqual(data[4]);
 		});
 	    }));
 	    it('problem',inject(function($rootScope,ticTacToeService){
-		var data=[{value='b'},{value='a'},{value='b'},{value='a'},{value='a'},{value='a'},{value='b'},{value='a'},{value='b'}];
+		var data=[{value:'b'},{value:'a'},{value:'b'},{value:'a'},{value:'a'},{value:'a'},{value:'b'},{value:'a'},{value:'b'}];
 		ticTacToeService.decide(data).then(function(response){
 		    expect(true).toEqual(false);
 		},function(response){
