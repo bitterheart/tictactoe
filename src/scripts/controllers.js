@@ -36,12 +36,8 @@
 	    }
 	};
 	$scope.pickMe=function(cell){
-	    cell.value='Xsasdf';
-	    console.log('aaaaaaaaaaaaaaaaa');
-	    cell.value+='aaaaaaaaaa';
+	    cell.value='X';
 	    ticTacToeService.decide(data,length).then(function(response){
-		console.log('bbbbbbbbbbbbbbbbb');
-		cell.value+='bbbbbbbbb';
 		updateStatus(response);
 		if(!$scope.gameOver)
 		{
