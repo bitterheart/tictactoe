@@ -94,7 +94,7 @@ describe('tic tac toe',function(){
 		return pickDeferred.promise;
 	    };
 	    $rootScope.pickMe($rootScope.grid[1][1]);
-	    decideDeferred.resolve({winners:{},free:8});
+	    decideDeferred.resolve({winners:[],free:8});
 	    $rootScope.$apply();
 	    pickDeferred.resolve($rootScope.grid[2][2]);
 	    $rootScope.$apply();
