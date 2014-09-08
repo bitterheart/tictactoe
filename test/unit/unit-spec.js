@@ -355,7 +355,18 @@ describe('tic tac toe',function(){
 	    }));
 	});
 	describe('pick',function(){
-	    
+	    it('no choice',inject(function($rootScope,ticTacToeService){
+		var data=[{value='b'},{value='a'},{value='b'},{value='a'},{value='-'},{value='a'},{value='b'},{value='a'},{value='b'}];
+		ticTacToeService.decide(data).then(function(response){
+		    expect(response).toEqual(data[4]);
+		});
+	    }));
+	    it('problem',inject(function($rootScope,ticTacToeService){
+		var data=[{value='b'},{value='a'},{value='b'},{value='a'},{value='a'},{value='a'},{value='b'},{value='a'},{value='b'}];
+		ticTacToeService.decide(data).then(function(response){
+		    expect(response).toEqual(data[4]);
+		});
+	    }));
 	});
     });
 });
