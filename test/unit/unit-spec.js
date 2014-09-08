@@ -294,6 +294,26 @@ describe('tic tac toe',function(){
     });
     describe('tic tac toe service',function(){
 	describe('decide',function(){
+	    it('downward diagonal winner',inject(function($rootScope,ticTacToeService){
+		var data=[{value='a'},{value='b'},{value='b'},{value='b'},{value='a'},{value='b'},{value='b'},{value='b'},{value='a'}];
+		ticTacToeService.decide(data,3).then(function(response){
+		    expect(response.winners[0].length=1;
+		    expect(response.winners[0][0]).toEqual(data[0]);
+		    expect(response.winners[0][1]).toEqual(data[4]);
+		    expect(response.winners[0][2]).toEqual(data[8]);
+		});
+	    }));
+	    it('upward diagonal winner',inject(function($rootScope,ticTacToeService){
+		var data=[{value='b'},{value='b'},{value='a'},{value='b'},{value='a'},{value='b'},{value='a'},{value='b'},{value='b'}];
+		ticTacToeService.decide(data,3).then(function(response){
+		    expect(response.winners[0].length=1;
+		    expect(response.winners[0][0]).toEqual(data[0]);
+		    expect(response.winners[0][1]).toEqual(data[4]);
+		    expect(response.winners[0][2]).toEqual(data[8]);
+		});
+	    }));
+	});
+	describe('pick',function(){
 	    
 	});
     });
