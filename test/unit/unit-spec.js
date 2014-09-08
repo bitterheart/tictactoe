@@ -66,7 +66,7 @@ describe('tic tac toe',function(){
 	    expect($rootScope.grid[1][1].value).toEqual('X');
 	    expect($rootScope.grid[1][2].value).toEqual('-');
 	    expect($rootScope.grid[2][0].value).toEqual('-');
-	    expect($rootScope.grid[2][1].value).toEqual('A');
+	    expect($rootScope.grid[2][1].value).toEqual('-');
 	    expect($rootScope.grid[2][2].value).toEqual('O');
 	    expect($rootScope.grid[0][0].status).toEqual('player');
 	    expect($rootScope.grid[0][1].status).toEqual('player');
@@ -78,6 +78,7 @@ describe('tic tac toe',function(){
 	    expect($rootScope.grid[2][1].status).toEqual('player');
 	    expect($rootScope.grid[2][2].status).toEqual('player');
 	    expect($rootScope.winner).toEqual('-');
+	    expect($rootScope.gameOver).toEqual(false);
 	}));
     });
 });
