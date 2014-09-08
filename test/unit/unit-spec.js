@@ -376,29 +376,30 @@ describe('tic tac toe',function(){
 		    expect(response.winners[0][2]).toEqual(data[8]);
 		    expect(response.free).toEqual(0);
 		});
-	    it('no winners',inject(function($rootScope,ticTacToeService){
-		var data=[{value:'b'},{value:'a'},{value:'b'},{value:'a'},{value:'-'},{value:'a'},{value:'b'},{value:'a'},{value:'b'}];
-		ticTacToeService.decide(data,3).then(function(response){
-		    expect(response.winners[0].length).toEqual(0);
-		    expect(response.free).toEqual(1);
-		});
+		it('no winners',inject(function($rootScope,ticTacToeService){
+		    var data=[{value:'b'},{value:'a'},{value:'b'},{value:'a'},{value:'-'},{value:'a'},{value:'b'},{value:'a'},{value:'b'}];
+		    ticTacToeService.decide(data,3).then(function(response){
+			expect(response.winners[0].length).toEqual(0);
+			expect(response.free).toEqual(1);
+		    });
+		}));
 	    }));
-	}));
-	describe('pick',function(){
-	    it('no choice',inject(function($rootScope,ticTacToeService){
-		var data=[{value:'b'},{value:'a'},{value:'b'},{value:'a'},{value:'-'},{value:'a'},{value:'b'},{value:'a'},{value:'b'}];
-		ticTacToeService.decide(data).then(function(response){
-		    expect(response).toEqual(data[4]);
-		});
-	    }));
-	    it('problem',inject(function($rootScope,ticTacToeService){
-		var data=[{value:'b'},{value:'a'},{value:'b'},{value:'a'},{value:'a'},{value:'a'},{value:'b'},{value:'a'},{value:'b'}];
-		ticTacToeService.decide(data).then(function(response){
-		    expect(true).toEqual(false);
-		},function(response){
-		    expect('illegal move').toEqual(response);
-		});
-	    }));
+	    describe('pick',function(){
+		it('no choice',inject(function($rootScope,ticTacToeService){
+		    var data=[{value:'b'},{value:'a'},{value:'b'},{value:'a'},{value:'-'},{value:'a'},{value:'b'},{value:'a'},{value:'b'}];
+		    ticTacToeService.decide(data).then(function(response){
+			expect(response).toEqual(data[4]);
+		    });
+		}));
+		it('problem',inject(function($rootScope,ticTacToeService){
+		    var data=[{value:'b'},{value:'a'},{value:'b'},{value:'a'},{value:'a'},{value:'a'},{value:'b'},{value:'a'},{value:'b'}];
+		    ticTacToeService.decide(data).then(function(response){
+			expect(true).toEqual(false);
+		    },function(response){
+			expect('illegal move').toEqual(response);
+		    });
+		}));
+	    });
 	});
     });
 });
