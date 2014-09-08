@@ -296,7 +296,7 @@ describe('tic tac toe',function(){
 	    $rootScope.grid='wrong';
 	    $rootScope.winner='wrong';
 	    $rootScope.gameOver='wrong';
-	    $rootScope.replay();
+	    $rootScope.restart();
 	    expect($rootScope.grid.length).toEqual(3);
 	    expect($rootScope.grid[0].length).toEqual(3);
 	    expect($rootScope.grid[1].length).toEqual(3);
