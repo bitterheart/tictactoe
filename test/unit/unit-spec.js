@@ -44,7 +44,10 @@ describe('tic tac toe',function(){
 	    $controller('controller',{$scope:$rootScope});
 	    expect($rootScope.gameOver).toEqual(false);
 	}));
-	it('initially the winner should be 0',
+	it('initially the winner should be 0',inject(function($rootScope,$controller){
+	    $controller('controller',{$scope:$rootScope});
+	    expect($rootScope.winner).toEqual(0);
+	}));
 	it('i make a move (center square) it should be xed, and the computer make a move',inject(function($rootScope,$controller,$q){
 	    var ticTacToeService={};
 	    $controller('controller',{$scope:$rootScope, ticTacToeService:ticTacToeService});
