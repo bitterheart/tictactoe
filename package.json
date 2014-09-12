@@ -1,36 +1,41 @@
 {
-    "name": "tictactoe",
-    "version": "0.0.0",
-    "private": true,
-    "description": "Standard Tic Tac Toe",
-    "main": "index.js",
-    "devDependencies": {
-	"grunt": "~0.4.5",
-	"grunt-contrib-jshint": "~0.10.0",
-	"grunt-contrib-nodeunit": "~0.4.1",
-	"grunt-contrib-uglify": "~0.5.0",
-	"grunt-protractor-runner": "~1.1.4",
-	"protractor": "~1.2.0",
-	"grunt-protractor-webdriver": "~0.1.8",
-	"express": "~4.8.8",
-	"grunt-express": "~1.4.1"
-    },
-    "directories": {
-	"test": "test"
-    },
-    "scripts": {
-	"test": "protractor_conf.js"
-    },
-    "repository": {
-	"type": "git",
-	"url": "git://github.com/bitterheart/tictactoe.git"
-    },
-    "keywords": [
-	"tic-tac-toe"
-    ],
-    "author": "Emory Merryman",
-    "license": "GNU GPL3",
-    "bugs": {
-	"url": "https://github.com/bitterheart/tictactoe/issues"
-    }
+  "name": "tictactoe",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Standard Tic Tac Toe",
+  "main": "index.js",
+  "devDependencies": {
+    "express": "~4.8.8",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-express": "~1.4.1",
+    "grunt-karma": "^0.9.0",
+    "grunt-protractor-runner": "~1.1.4",
+    "grunt-protractor-webdriver": "~0.1.8",
+    "karma": "^0.12.23",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-html-reporter": "^0.2.4",
+    "karma-jasmine": "^0.1.5",
+    "protractor": "~1.2.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "protractor_conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bitterheart/tictactoe.git"
+  },
+  "keywords": [
+    "tic-tac-toe"
+  ],
+  "author": "Emory Merryman",
+  "license": "GNU GPL3",
+  "bugs": {
+    "url": "https://github.com/bitterheart/tictactoe/issues"
+  }
 }
