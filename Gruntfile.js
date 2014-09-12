@@ -44,8 +44,8 @@ module.exports = function(grunt) {
 			},
 			continuous: {
 				configFile: 'config/karma.conf.js',
+				reporters: ['html'],
 				singleRun: true,
-				browsers: ['Chrome']
 			}
 		}
 	});
@@ -58,10 +58,10 @@ module.exports = function(grunt) {
 		'protractor_webdriver',
 		'protractor'
 	]);
-	grunt.registerTask('kar', [
+	grunt.registerTask('unittests-ci', [
 		'karma:continuous'
 	]);
-	grunt.registerTask('karunit',[
+	grunt.registerTask('unittests-cli',[
 		'karma:unit'
 	])
 };
