@@ -13,9 +13,7 @@ module.exports = function(config) {
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
-		reporters: ['progress'],
-		// web server port
-		port: 9876,
+		reporters: ['progress','html'],
 		// enable / disable colors in the output (reporters and logs)
 		colors: true,
 		// level of logging
@@ -31,9 +29,10 @@ module.exports = function(config) {
 		singleRun: false,
 		htmlReporter: {
 			outputDir: '/tmp/karma_html',
-			templatePath: __dirname + '/node_modules/karma-html-reporter/jasmine_template.html'
+			templatePath: __dirname + '/../node_modules/karma-html-reporter/jasmine_template.html'
 		},
 		plugins:[
+			'karma-html-reporter',
              'karma-jasmine',
              'karma-requirejs',
              'karma-coverage',

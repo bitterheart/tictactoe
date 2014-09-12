@@ -40,11 +40,12 @@ module.exports = function(grunt) {
 		},
 		karma: {
 			unit: {
-				configFile: 'config/karma.conf.js'
+				configFile: 'config/karma.conf.js',
+				port: 9879
 			},
 			continuous: {
 				configFile: 'config/karma.conf.js',
-				reporters: ['html'],
+				port: 9880,
 				singleRun: true,
 			}
 		}
