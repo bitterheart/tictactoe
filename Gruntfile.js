@@ -15,16 +15,24 @@ module.exports = function(grunt) {
 		},
 		protractor: {
 			options: {
-				configFile: "node_modules/protractor/referenceConf.js", // Default config file
-				keepAlive: false, // If false, the grunt process stops when the test fails.
+//				configFile: "node_modules/protractor/docs/referenceConf.js", // Default config file
+//				keepAlive: false, // If false, the grunt process stops when the test fails.
 				noColor: false, // If true, protractor will not use colors in its output.
 				args: {
 					// Arguments passed to the command
 				}
 			},
-			your_target: {
+			ci: {
 				options: {
 					configFile: "config/protractor.conf.js", // Target-specific config file
+					keepAlive:false,
+					args: {} // Target-specific arguments
+				}
+			},
+			cli:{
+				options:{
+					configFile: "config/protractor.conf.js", // Target-specific config file
+					keepAlive:true,
 					args: {} // Target-specific arguments
 				}
 			}
@@ -57,12 +65,12 @@ module.exports = function(grunt) {
 	grunt.registerTask('e2etests-ci', [
 		'express',
 		'protractor_webdriver',
-		'protractor'
+		'protractor:ci'
 	]);
 	grunt.registerTask('e2etests-cli', [
 		'express',
 		'protractor_webdriver',
-		'protractor'
+		'protractor:cli'
 	]);
 	grunt.registerTask('unittests-ci', [
 		'karma:continuous'
