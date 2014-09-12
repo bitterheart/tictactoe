@@ -4,7 +4,7 @@ describe('tic tac toe',function(){
 	beforeEach(module('app'));
 	it('initially fail on pur pose 12312312',inject(function($rootScope,$controller){
 	    $controller('controller',{$scope:$rootScope});
-	    expect($rootScope.grid.length).toEqual(5);
+	    expect($rootScope.grid.length).toEqual(9);
 	}));
 	it('initially it should have a grid with three rows',inject(function($rootScope,$controller){
 	    $controller('controller',{$scope:$rootScope});
