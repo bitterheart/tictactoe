@@ -3,20 +3,20 @@ exports.config = {
     seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
 
     // Capabilities to be passed to the webdriver instance.
-    capabilities: {
-	'browserName': 'chrome',
-    },
-/*
+//    capabilities: {
+//	'browserName': 'pPantomJS',
+//    },
+
     capabilities: {
 	'browserName': 'phantomjs',
 	'phantomjs.binary.path': require('phantomjs').path,
 	'phantomjs.cli.jargs': '--web-security=false'
     },
-*/
+
 
     // Spec patterns are relative to the current working directly when
     // protractor is called.
-    specs: ['test/e2e/*-spec.js'],
+    specs: ['../test/e2e/*-spec.js'],
 
     // Options to be passed to Jasmine-node.
     jasmineNodeOpts: {

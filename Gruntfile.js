@@ -54,7 +54,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-protractor-webdriver');
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-karma');
-	grunt.registerTask('pro', [
+	grunt.registerTask('e2etests-ci', [
+		'express',
+		'protractor_webdriver',
+		'protractor'
+	]);
+	grunt.registerTask('e2etests-cli', [
 		'express',
 		'protractor_webdriver',
 		'protractor'
