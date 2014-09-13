@@ -9,11 +9,13 @@ module.exports = function(config) {
 			'test/unit/*.js'
 		],
 		exclude: [],
-		preprocessors: {},
+		preprocessors: {
+			'src/scripts/*.js': 'coverage'
+		},
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
-		reporters: ['progress','html'],
+		reporters: ['progress', 'html', 'coverage'],
 		// enable / disable colors in the output (reporters and logs)
 		colors: true,
 		// level of logging
@@ -22,6 +24,7 @@ module.exports = function(config) {
 		// enable / disable watching file and executing tests whenever any file changes
 		autoWatch: true,
 		// start these browsers
+
 		// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
 		browsers: ['PhantomJS'],
 		// Continuous Integration mode
@@ -31,16 +34,20 @@ module.exports = function(config) {
 			outputDir: '/tmp/karma_html',
 			templatePath: __dirname + '/../node_modules/karma-html-reporter/jasmine_template.html'
 		},
-		plugins:[
+		coverageReporter: {
+			type: 'html',
+			dir: '/tmp/unittest/coverage/'
+		},
+		plugins: [
 			'karma-html-reporter',
-             'karma-jasmine',
-             'karma-requirejs',
-             'karma-coverage',
-             'karma-junit-reporter',
-             'karma-phantomjs-launcher',
-             'karma-chrome-launcher',
-             'karma-firefox-launcher',
-             'karma-ie-launcher'
+			'karma-jasmine',
+			'karma-requirejs',
+			'karma-coverage',
+			'karma-junit-reporter',
+			'karma-phantomjs-launcher',
+			'karma-chrome-launcher',
+			'karma-firefox-launcher',
+			'karma-ie-launcher'
 
 		]
 	});

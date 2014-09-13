@@ -28,13 +28,6 @@ module.exports = function(grunt) {
 					keepAlive:false,
 					args: {} // Target-specific arguments
 				}
-			},
-			cli:{
-				options:{
-					configFile: "config/protractor.conf.js", // Target-specific config file
-					keepAlive:true,
-					args: {} // Target-specific arguments
-				}
 			}
 		},
 		express: {
@@ -49,12 +42,17 @@ module.exports = function(grunt) {
 		karma: {
 			unit: {
 				configFile: 'config/karma.conf.js',
-				port: 9879
+				port: 9879,
+				singleRun: false,
+				autoWatch: true,
+				reporters:['progress'],
 			},
 			continuous: {
 				configFile: 'config/karma.conf.js',
 				port: 9880,
 				singleRun: true,
+				autoWatch: false,
+				reporters:['html','coverage'],
 			}
 		}
 	});
@@ -66,11 +64,6 @@ module.exports = function(grunt) {
 		'express',
 		'protractor_webdriver',
 		'protractor:ci'
-	]);
-	grunt.registerTask('e2etests-cli', [
-		'express',
-		'protractor_webdriver',
-		'protractor:cli'
 	]);
 	grunt.registerTask('unittests-ci', [
 		'karma:continuous'
