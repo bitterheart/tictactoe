@@ -5,12 +5,13 @@ module.exports = function(config) {
 		files: [
 			'src/cdn/angular/1.2.9/angular.min.js',
 			'src/cdn/angular/1.2.9/angular-mocks.js',
-			'src/scripts/*.js',
+			'src/scripts.covered/*.js',
+			'src/scripts.uncovered/*.js',
 			'test/unit/*.js'
 		],
 		exclude: [],
 		preprocessors: {
-			'src/scripts/*.js': 'coverage'
+			'src/scripts.covered/*.js': 'coverage'
 		},
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
