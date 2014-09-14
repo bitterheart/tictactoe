@@ -625,38 +625,7 @@ describe('tic tac toe', function() {
 					}, function(response) {
 						expect('illegal move').toEqual(response);
 					});
-				}));
-				it('can do', inject(function($rootScope, $q, ticTacToeService, randomService) {
-					randomService.random=function(){
-						var deferred=$q.defer();
-						deferred.resolve(0.5);
-						return deferred.promise;
-					};
-					var data = [{
-						value: '-'
-					}, {
-						value: '-'
-					}, {
-						value: '-'
-					}, {
-						value: '-'
-					}, {
-						value: '-'
-					}, {
-						value: '-'
-					}, {
-						value: '-'
-					}, {
-						value: '-'
-					}, {
-						value: '-'
-					}];
-					ticTacToeService.pick(data).then(function(response) {
-						expect(true).toEqual(false);
-					}, function(response) {
-						expect(data[0]).toEqual(response);
-					});
-				}));
+				})); 
 			});
 		});
 	});
