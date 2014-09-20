@@ -78,6 +78,7 @@ module.exports = function(grunt) {
 			}
 		}
 	});
+	grunt.loadNpmTasks('shell');
 	grunt.loadNpmTasks('grunt-selenium-webdriver-phantom');
 	grunt.loadNpmTasks('grunt-protractor-runner');
 	grunt.loadNpmTasks('grunt-protractor-runner');
