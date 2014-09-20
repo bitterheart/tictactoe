@@ -32,4 +32,11 @@ describe('ticTacToeService', function() {
             $rootScope.$apply();
         }
     ]));
+    it('will have illegal moves',inject(['$rootScope','ticTacToeService',function($rootScope,ticTacToeService){
+        var data=[{value:'x'},{value:'x'}];
+        ticTacToeService.pick(data).then(function(response){
+        },function(response){
+            expect(response).toEqual('illegal move');
+        });
+    }]));
 });
