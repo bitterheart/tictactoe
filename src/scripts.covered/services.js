@@ -43,14 +43,31 @@
 					return deferred.promise;
 				},
 				pick: function(data) {
+					                console.log('A410');
 					var deferred = $q.defer();
+					                console.log('A420');
 					var f = free(data);
+					                console.log('A430');
 					if (0 < f.length) {
+					                console.log('A431');
+					                console.log(randomService);
+					                for(var key in randomService){
+					                	console.log('key '+key);
+					                }
+					                console.log(randomService.random);
+					                console.log(randomService.findme);
+					                console.log('just before...');
 						randomService.random().then(function(rand){
+							console.log(f);
+							console.log('in the middle ...' +rand);
+												                console.log('A436');
+
 							deferred.resolve(f[Math.floor(rand * f.length)]);
 						});
+						console.log('just after ...');
 					}
 					else {
+					                console.log('A432');
 						deferred.reject('illegal move');
 					}
 					return deferred.promise;

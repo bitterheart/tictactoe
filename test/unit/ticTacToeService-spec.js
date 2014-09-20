@@ -1,33 +1,36 @@
 describe('ticTacToeService', function() {
-    var ticTacToeService;
-    beforeEach(module('app', ['$provide',
-        function(_$provide_) {
-            $provide = _$provide_;
-        }
-    ]));
-    beforeEach(inject(['$q', 'ticTacToeService',
-        function($q, _ticTacToeService_) {
-            $provide.provider('randomService', function() {
-                this.$get=angular.noop;
-                this.random = function() {
-                    var deferred = $q.defer();
-                    deferred.resolve(0.5);
-                    return deferred.promise;
+    beforeEach(module('app'));
+    beforeEach(module(['$provide',
+        function($provide) {
+            $provide.value('randomService', {
+                random: function(){
+                    return {
+                        then:function(fnctn){
+                            fnctn(0.5);
+                        }
+                    };
                 }
             });
-            ticTacToeService = _ticTacToeService_;
+        }
+    ]))
+
+    it('can rock', inject(['$rootScope','ticTacToeService',
+        function($rootScope,ticTacToeService) {
+            var data = [{
+                value: '-'
+            }, {
+                value: '-'
+            }, {
+                value: '-'
+            }, {
+                value: 'x'
+            }];
+            console.log(ticTacToeService);
+            ticTacToeService.pick(data).then(function(response) {
+                console.log('*******HERE*****');
+                expect(response).toEqual(data[3]);
+            });
+            $rootScope.$apply();
         }
     ]));
-    it('b', function() {
-        var data = [{
-            value: '-'
-        }, {
-            value: '-'
-        }, {
-            value: '1'
-        }];
-        ticTacToeService.pick(data).then(function(result) {
-            expect(10).toEqual(20);
-        });
-    })
 });
