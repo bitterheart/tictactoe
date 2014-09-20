@@ -27,8 +27,7 @@ describe('ticTacToeService', function() {
             }];
             console.log(ticTacToeService);
             ticTacToeService.pick(data).then(function(response) {
-                console.log('*******HERE*****');
-                expect(response).toEqual(data[3]);
+                expect(response).toEqual(data[1]);
             });
             $rootScope.$apply();
         }
