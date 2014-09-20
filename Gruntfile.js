@@ -78,12 +78,14 @@ module.exports = function(grunt) {
 			}
 		}
 	});
+	grunt.loadNpmTasks('grunt-selenium-webdriver-phantom');
+	grunt.loadNpmTasks('grunt-protractor-runner');
 	grunt.loadNpmTasks('grunt-protractor-runner');
 	grunt.loadNpmTasks('grunt-protractor-webdriver');
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.registerTask('e2etests-ci', [
-		'selenium_webdriver_phantom:phantom', 'protractor', 'selenium_webdriver_phantom:stop'
+		'shell:protractor_webdriver_manager_update', 'selenium_webdriver_phantom:phantom', 'protractor', 'selenium_webdriver_phantom:stop'
 	]);
 	grunt.registerTask('e2etests-ci2', [
 		'express',
