@@ -95,12 +95,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.registerTask('e2etests-ci', [
-		/*'shell:protractor_webdriver_manager_update',*/
-		'selenium_webdriver_phantom:phantom', 'protractor', 'selenium_webdriver_phantom:stop'
-	]);
-	grunt.registerTask('e2etests-ci2', [
 		'express',
-		'protractor_webdriver',
+		'protractor_webdriver:chrome',
 		'protractor:ci'
 	]);
 	grunt.registerTask('unittests-ci', [
