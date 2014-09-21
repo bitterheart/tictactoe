@@ -9,6 +9,7 @@ exports.config = {
 
     capabilities: {
         'browserName': 'chrome',
+        'binary':'google-chrome'
     },
 
 
