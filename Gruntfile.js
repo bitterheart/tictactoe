@@ -5,6 +5,15 @@
 module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
+		watch: {
+			express: {
+				files: ['**/*.js'],
+				tasks: ['express:server'],
+				options: {
+					spawn: false // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions. Without this option specified express won't be reloaded
+				}
+			}
+		},
 		shell: {
 			protractor_webdriver_manager_update: {
 				options: {
@@ -78,7 +87,7 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-	grunt.loadNpmTasks('shell');
+	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-selenium-webdriver-phantom');
 	grunt.loadNpmTasks('grunt-protractor-runner');
 	grunt.loadNpmTasks('grunt-protractor-runner');
@@ -86,7 +95,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.registerTask('e2etests-ci', [
-		/*'shell:protractor_webdriver_manager_update',*/ 'selenium_webdriver_phantom:phantom', 'protractor', 'selenium_webdriver_phantom:stop'
+		/*'shell:protractor_webdriver_manager_update',*/
+		'selenium_webdriver_phantom:phantom', 'protractor', 'selenium_webdriver_phantom:stop'
 	]);
 	grunt.registerTask('e2etests-ci2', [
 		'express',
@@ -98,6 +108,9 @@ module.exports = function(grunt) {
 	]);
 	grunt.registerTask('unittests-cli', [
 		'karma:unit'
-	])
+	]);
+	grunt.registerTask('runServer', [
+		'express'
+	]);
 };
 //stuff

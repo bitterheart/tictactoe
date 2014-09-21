@@ -1,9 +1,5 @@
 var HtmlReporter = require('protractor-html-screenshot-reporter');
 exports.config = {
-    files: [
-        'src/cdn/angular/1.2.9/angular.min.js',
-        'src/cdn/angular/1.2.9/angular-mocks.js'
-    ],
     seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
 
     // Capabilities to be passed to the webdriver instance.
