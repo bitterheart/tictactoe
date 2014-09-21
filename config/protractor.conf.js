@@ -10,6 +10,7 @@ exports.config = {
         capabilities: {
             'browserName': 'Chrome',
             'ChromeOptions': {},
+        }
 
 
             // Spec patterns are relative to the current working directly when
