@@ -27,10 +27,12 @@ exports.config = {
     baseUrl: 'http://127.0.0.1:9000/',
     onPrepare: function() {
         // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
-           jasmine.getEnv().addReporter(new HtmlReporter({
-                   baseDirectory: '/tmp/screenshots',
-                   takeScreenShotsOnlyForFailedSpecs: true,
-                   docTitle: 'protractor reporter'
-               }));
+        /*
+        jasmine.getEnv().addReporter(new HtmlReporter({
+                           baseDirectory: '/tmp/screenshots',
+                           takeScreenShotsOnlyForFailedSpecs: true,
+                           docTitle: 'protractor reporter'
+                       }));
+                       */
     }
 };
