@@ -1,4 +1,4 @@
-"strict";
+"use strict";
 describe('tic tac toe', function() {
 	beforeEach(function() {
 		browser.driver.get('http://127.0.0.1:9000/index.html');
