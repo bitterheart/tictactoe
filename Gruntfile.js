@@ -94,6 +94,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-protractor-webdriver');
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-karma');
+	grunt.loadNpmTasks('grunt-protractor-coverage');
 	grunt.registerTask('e2etests-ci', [
 		'express',
 		'protractor_webdriver:ci',
