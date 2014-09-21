@@ -8,7 +8,7 @@ exports.config = {
     //    },
 
     capabilities: {
-        'browserName': 'Chrome',
+        'browserName': 'ChromeCanary',
         'ChromeOptions': {
             binary: '/usr/bin/google-chrome'
         },
