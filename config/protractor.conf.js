@@ -28,7 +28,7 @@ exports.config = {
 	defaultTimeoutInterval: 30000
     },
     baseUrl: 'http://127.0.0.1:9000/',
-    rootElement: 'div',
+    rootElement: 'body',
     onPrepare: function() {
 	// Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
 	jasmine.getEnv().addReporter(new HtmlReporter({
