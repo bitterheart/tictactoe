@@ -96,7 +96,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.registerTask('e2etests-ci', [
 		'express',
-		'protractor_webdriver:chrome',
+		'protractor_webdriver:ci',
 		'protractor:ci'
 	]);
 	grunt.registerTask('unittests-ci', [
