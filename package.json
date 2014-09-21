@@ -14,6 +14,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-express": "~1.4.1",
     "grunt-karma": "^0.9.0",
+    "grunt-protractor-coverage": "^0.2.10",
     "grunt-protractor-runner": "~1.1.4",
     "grunt-protractor-webdriver": "~0.1.8",
     "grunt-selenium-webdriver-phantom": "^1.0.4",
