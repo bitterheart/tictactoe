@@ -8,12 +8,12 @@ exports.config = {
     //    },
 
     capabilities: {
-        'browserName': 'Chrome',
+        'browserName': 'chrome'/*,
         'ChromeOptions': {
             binary: '/usr/bin/google-chrome',
             args: ['--disable-web-security']
 
-        },
+        },*/
     },
 
 
