@@ -8,7 +8,7 @@ exports.config = {
     //    },
 
     capabilities: {
-        'browserName': 'ChromeCanary',
+        'browserName': 'Chrome',
         'ChromeOptions': {
             binary: '/usr/bin/google-chrome',
             args: ['--disable-web-security']
