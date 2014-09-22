@@ -6,7 +6,7 @@ describe('tic tac toe', function() {
 	it('should have a title', function() {
 		expect(element(by.css('h1')).getText()).toEqual('Tic Tac Toe');
 	});
-	it('should fail',function(){
+	xit('should fail',function(){
 		expect(element(by.css('h3')).getText()).toEqual('wrong');
 	});
 });
