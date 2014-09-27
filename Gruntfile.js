@@ -5,6 +5,31 @@
 module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
+		eslint: {
+			all2: {
+				options: {
+					config: 'config/rules.json'
+				},
+				files: {
+					src: ['src/scripts.covered/*.js', 'src/scripts.uncovered/*.js']
+				}
+			}
+		},
+		instrument: {
+			files: 'src/scripts.covered/*.js',
+			options: {
+				lazy: true,
+				basePath: "instrumented"
+			}
+		},
+		protractor_coverage: {
+			options: {
+				// Task-specific options go here.
+			},
+			your_target: {
+				// Target-specific file lists and/or options go here.
+			},
+		},
 		watch: {
 			express: {
 				files: ['**/*.js'],
@@ -69,6 +94,14 @@ module.exports = function(grunt) {
 					bases: ['src']
 				},
 			},
+			coverageE2E: {
+				options: {
+					hostname: '127.0.0.1',
+					port: 16273,
+					script: 'instrumented',
+					debug: true
+				}
+			},
 		},
 		karma: {
 			unit: {
@@ -87,6 +120,7 @@ module.exports = function(grunt) {
 			}
 		}
 	});
+	grunt.loadNpmTasks('eslint-grunt');
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-selenium-webdriver-phantom');
 	grunt.loadNpmTasks('grunt-protractor-runner');
@@ -108,6 +142,9 @@ module.exports = function(grunt) {
 	]);
 	grunt.registerTask('runServer', [
 		'express'
+	]);
+	grunt.registerTask('statics', [
+		'eslint:all2'
 	]);
 };
 //stuff
